@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/common.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/carrusel.css">
+  <title>Digital Assets Store</title>
+</head>
+<body>
+  <!-- Navegación -->
+  <nav class="navbar">
+    <div class="logo">💎 Digital Assets Store</div>
+        <ul class="menu">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/productos">Productos</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/nosotros">Nosotros</a></li>
+        </ul>
+  </nav>
+
+  <!-- Hero principal -->
+  <header class="hero">
+    <div class="hero-content fade-in">
+      <h1>Bienvenido a Digital Assets Store</h1>
+      <p>Explora nuestros productos digitales y potencia tu negocio con innovación y tecnología.</p>
+      <a href="/productos" class="btn">Explorar ahora</a>
+    </div>
+  </header>
+
+  <!-- Sección de características -->
+  <section class="features">
+    <div class="feature fade-in">
+      <h2>🚀 Rápido</h2>
+      <p>Nuestros sistemas están optimizados para ofrecerte la mejor experiencia de usuario.</p>
+    </div>
+    <div class="feature fade-in">
+      <h2>🔒 Seguro</h2>
+      <p>Protegemos tus datos y transacciones con la más alta tecnología de cifrado.</p>
+    </div>
+    <div class="feature fade-in">
+      <h2>💡 Innovador</h2>
+      <p>Actualizamos constantemente nuestras soluciones para mantenerte a la vanguardia.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Digital Assets Store | Todos los derechos reservados.</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+  <script>
+    // Efecto de aparición al hacer scroll
+    const elements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

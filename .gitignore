@@ -1,0 +1,33 @@
+# Node/Python/General ignores
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.venv/
+# SQLite database
+*.db
+database.db
+# Distribution
+*.egg-info/
+dist/
+build/
+# OS
+Thumbs.db
+.DS_Store
+# Logs
+*.log
+# Zips and backups
+*.zip
+*.tar.gz
+# VSCode
+.vscode/
+# macOS
+*.DS_Store
+# Secrets
+.env
+
+# If you add more tooling (e.g., VS Code workspace), add them here

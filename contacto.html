@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Digital Assets Store</title>
+  <link rel="stylesheet" href="/styles/common.css">
+  <link rel="stylesheet" href="/styles/contacto.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">💎 Digital Assets Store</div>
+    <ul class="menu">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/productos">Productos</a></li>
+      <li><a href="/contacto" class="activo">Contacto</a></li>
+      <li><a href="/nosotros">Nosotros</a></li> 
+    </ul>
+  </nav>
+
+  <header class="encabezado">
+    <h1>Contáctanos</h1>
+    <p>Déjanos un mensaje y nos pondremos en contacto contigo.</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="info-contacto">
+      <h2>Información de Contacto</h2>
+      <div class="info-item">
+        <h3>Ubicación</h3>
+        <p>San miguel, Perú</p>
+      </div>
+      <div class="info-item">
+        <h3>Teléfono</h3>
+        <p>+51 928 089 927</p>
+      </div>
+      <div class="info-item">
+        <h3>Email</h3>
+        <p>DigitalContacto@gmail.com</p>
+      </div>
+    </section>
+
+    <form id="contactForm" class="formulario" method="POST" action="/enviar">
+      <h2>Envíanos un Mensaje</h2>
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+      </div>
+
+      <div class="form-group">
+        <label>Correo electrónico:</label>
+        <input type="email" name="correo" required>
+      </div>
+
+      <div class="form-group">
+        <label>Mensaje:</label>
+        <textarea name="mensaje" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Enviar mensaje</button>
+    </form>
+
+    <div id="mensajeConfirmacion" class="fade-in"></div>
+  </main>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      fetch('/enviar', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        const mensajeDiv = document.getElementById('mensajeConfirmacion');
+        mensajeDiv.textContent = data.mensaje;
+        mensajeDiv.classList.add('visible');
+        this.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  </script>
+
+  <footer class="footer">
+    <p>&copy; 2025 Digital Assets Store | Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

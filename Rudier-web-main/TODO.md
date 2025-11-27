@@ -1,0 +1,7 @@
+- [x] Crear archivo CSS común (styles/common.css) con estilos unificados para nav, footer y responsive.
+- [x] Incluir common.css en todas las páginas HTML (index.html, productos.html, contacto.html, nosotros.html).
+- [x] Cambiar la clase del footer en nosotros.html de "pie" a "footer" para consistencia.
+- [x] Ajustar el layout del body en common.css para que el footer esté al final de la página (min-height: 100vh, flexbox).
+- [x] Unificar estilos del nav en common.css para que sea idéntico en todas las páginas.
+- [x] Verificar y ajustar responsive en common.css para dispositivos móviles.
+- [x] Probar las páginas para asegurar que se vean iguales y responsive.
